@@ -10,4 +10,21 @@ route
   .put(auth.isBasicAuthenticated, user.updateUser)
   .delete(auth.isBasicAuthenticated, user.deleteUser);
 
+  route.route("/test")
+  .get((req, res) => {
+      console.log(req)
+
+      res.send("확인")
+  })
+  .post((res,req) =>{
+      console.log(req.body)
+      res.send("post방식")
+  })
+
+  route.route("/test/:id")
+  .get((req, res) => {
+      console.log(req)
+
+      res.send("확인2")
+  })
 module.exports = route;
