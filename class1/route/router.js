@@ -12,7 +12,7 @@ route
 
   route.route("/test")
   .get((req, res) => {
-      console.log(req)
+      console.log(req.query)
 
       res.send("확인")
   })
@@ -27,4 +27,5 @@ route
 
       res.send("확인2")
   })
+
 module.exports = route;
